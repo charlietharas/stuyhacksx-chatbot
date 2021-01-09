@@ -9,8 +9,7 @@ Our wiki offers a relatively detailed description of the few steps needed to get
 ## Installing and Dependencies
 Preparing the data necessary to train the bot requires [this open source Discord exporter.](https://github.com/Tyrrrz/DiscordChatExporter) Download the latest release from their GitHub repository and follow the instructions built into the program/on their respective wiki to export your data into a .csv file. Any data preprocessing, filtering, or other tinkering you wish to do is entirely up to you!
 
-This project also requires installing several packages via pip. We recommend using a virtual environment manager such as Anaconda for this process. Install the required dependencies with
-`pip install -r requirements.txt`
+This project also requires installing several packages via pip. We recommend using a virtual environment manager such as Anaconda for this process. Install the required dependencies with `pip install -r requirements.txt`.
 
 Note that the project does not support the usage of a GPU to train at this time.
 
