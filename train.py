@@ -121,7 +121,6 @@ if feature_analysis:
                 total_word_count += 1
     
     wordset = set(words)
-    print("Total words from " + sel_user + ": " + str(total_word_count))
     print("Total messages from " + sel_user + ": " + str(usr_message_count))
     
     for i in wordset:
