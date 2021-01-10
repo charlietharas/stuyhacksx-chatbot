@@ -30,7 +30,7 @@ parser.add_argument("-hidden", "--hidden_layer_size", help="Size of hidden layer
 parser.add_argument("-e_layers", "--encoder_layers", help="Number of layers in the encoder. Default is 2.", default=2, type=int)
 parser.add_argument("-d_layers", "--decoder_layers", help="Number of layers in the decoder. Default is 2.", default=2, type=int)
 parser.add_argument("-drop", "--dropout_rate", help="Rate of dropout of the model. Default is 0.1.", default=0.1, type=float)
-parser.add_argument("-attn_type", "--attention_model_type", help="Customized attention model type. Default is dot.", default='dot')
+parser.add_argument("-attn_type", "--attention_model_type", help="Customized attention model type. Default is dot. Other possibilities are general, concatenated.", default='dot')
 
 args = parser.parse_args()
 sel_user = args.user
