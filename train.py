@@ -527,27 +527,6 @@ def train_iterations(model_name, vocabulary, pairs, encoder, decoder, encoder_op
                 'embedding': embedding.state_dict()
             }, os.path.join(directory, '{}_{}.tar'.format(iteration, 'checkpoint')))
 
-# searcher
-class GreedySearchDecoder(nn.Module):
-    def __init__(self, encoder, decoder):
-        super(GreedySearchDecoder, self).__init__()
-        self.encoder = encoder
-        self.decoder = decoder
-
-    def forward(self, input_sequence, input_length, max_len):
-        encoder_outputs, encoder_hidden = self.encoder(input_sequence, input_length)
-        decoder_hidden = encoder_hidden[:decoder.n_layers]
-        decoder_input = torch.ones(1, 1, device=device, dtype=torch.long) * SRT
-        all_tokens = torch.zeros([0], device=device, dtype=torch.long)
-        all_scores = torch.zeros([0], device=device)
-        for i in range(max_len):
-            decoder_output, decoder_hidden = self.decoder(decoder_input, decoder_hidden, encoder_outputs)
-            decoder_scores, decoder_input = torch.max(decoder_output, dim=1)
-            all_tokens = torch.cat((all_tokens, decoder_input), dim=0)
-            all_scores = torch.cat((all_scores, decoder_scores), dim=0)
-            decoder_input = torch.unsqueeze(decoder_input, 0)
-        return all_tokens, all_scores
-
 # training the model
 embedding = nn.Embedding(vocabulary.num_words, hidden_size)
 
