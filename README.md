@@ -20,7 +20,7 @@ If you have the data .csv file prepared already,  the following command will tra
 To view the full list of flags, run `python train.py --help` or see our wiki!
 
 This model also supports the use of [TensorDash](https://github.com/CleanPegasus/TensorDash) via the addition of your TensorDash password and email with the `--tensordash_email EMAIL` and `--tensordash_password PASSWORD`flags. The project's default name is 'Chatbot'. 
-For debugging or analyzing additional features of the data, consider adding the `--feature_analysis` flag, and further customizing that with `--words`. 
+For debugging or analyzing additional features of the data, consider adding the `--feature_analysis` flag, and further customizing that with `--words WORDS`. 
 
 Note that exported files may be relatively large, often ranging around 150-400MB in size *per checkpoint.*
 
