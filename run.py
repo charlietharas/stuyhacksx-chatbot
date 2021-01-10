@@ -381,13 +381,14 @@ client = discord.Client()
 
 @client.event
 async def on_ready():
+    await client.change_presence(activity=discord.Activity(type=discord.ActivityType.listening, name='$help'))
     print('Logged on as user {0.user}'.format(client))
 
 @client.event
 async def on_message(message):
     if message.author == client.user:
         return
-    
+        
     if message.content.startswith('$hello'):
         await message.channel.send('Hello! I am online and functional!')
         
